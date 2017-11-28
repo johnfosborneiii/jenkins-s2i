@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <com.openshift.jenkins.plugins.pipeline.OpenShiftBuilder plugin="openshift-pipeline@1.0.47">
+      <apiURL></apiURL>
+      <namespace>development</namespace>
+      <authToken></authToken>
+      <verbose>false</verbose>
+      <waitTime></waitTime>
+      <waitUnit>sec</waitUnit>
+      <bldCfg>todo-app-flask-mongo</bldCfg>
+      <commitID></commitID>
+      <buildName></buildName>
+      <showBuildLogs>false</showBuildLogs>
+      <checkForTriggeredDeployments>false</checkForTriggeredDeployments>
+    </com.openshift.jenkins.plugins.pipeline.OpenShiftBuilder>
+    <com.openshift.jenkins.plugins.pipeline.OpenShiftImageTagger plugin="openshift-pipeline@1.0.47">
+      <apiURL></apiURL>
+      <namespace>development</namespace>
+      <authToken></authToken>
+      <verbose>false</verbose>
+      <testTag>latest</testTag>
+      <prodTag>promoteToTest</prodTag>
+      <testStream>todo-app-flask-mongo</testStream>
+      <prodStream>todo-app-flask-mongo</prodStream>
+      <destinationNamespace>development</destinationNamespace>
+      <destinationAuthToken></destinationAuthToken>
+      <alias>false</alias>
+    </com.openshift.jenkins.plugins.pipeline.OpenShiftImageTagger>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
